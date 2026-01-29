@@ -10,7 +10,7 @@ import numpy as np
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image
-import tf_keras as keras  # Use tf_keras for Keras 2 compatibility
+from tensorflow import keras  # Use tensorflow.keras for Render compatibility
 
 app = Flask(__name__)
 CORS(app)
@@ -256,4 +256,4 @@ if __name__ == '__main__':
     print(f"   POST /predict - Upload image for disease detection")
     print(f"   GET  /health  - Health check")
     print(f"   GET  /classes - List all disease classes\n")
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port)
